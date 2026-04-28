@@ -12,7 +12,7 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
 body{background:#0f0f0f;color:white}
 
-/* GLASS HEADER */
+/* HEADER */
 header{
 position:fixed;width:100%;top:0;
 display:flex;justify-content:space-between;
@@ -27,14 +27,15 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
 .hero{
 height:100vh;
 display:flex;align-items:center;justify-content:center;
-background:linear-gradient(135deg,#000,#1a1a1a);
+background:linear-gradient(135deg,#0f0f0f,#2b1d14);
 text-align:center;
 }
 .hero h1{font-size:50px;}
 .hero button{
 margin-top:20px;padding:12px 30px;
 border:none;border-radius:30px;
-background:#6c63ff;color:white;cursor:pointer;
+background:#8B5E3C;
+color:white;cursor:pointer;
 }
 
 /* SECTION */
@@ -49,7 +50,10 @@ backdrop-filter:blur(10px);
 cursor:pointer;
 transition:.4s;
 }
-.card:hover{transform:translateY(-10px);box-shadow:0 0 20px #6c63ff;}
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px #8B5E3C;
+}
 
 .desc{display:none;margin-top:10px;color:#ccc;}
 .card.active .desc{display:block}
@@ -57,18 +61,21 @@ transition:.4s;
 /* GRID */
 .cards{display:flex;flex-wrap:wrap;justify-content:center}
 
-/* PORTFOLIO */
-.portfolio button{
-padding:10px 20px;
-border:none;
-background:#6c63ff;
+/* PORTFOLIO BUTTONS */
+.btn{
+display:inline-block;
+margin:10px;
+padding:12px 25px;
+background:#8B5E3C;
 color:white;
-border-radius:20px;
-cursor:pointer;
+border-radius:25px;
+text-decoration:none;
+transition:.3s;
 }
+.btn:hover{background:#a97449}
 
 /* CONTACT */
-.contact a{color:#6c63ff}
+.contact a{color:#a97449}
 
 /* WHATSAPP */
 .whatsapp{
@@ -149,14 +156,14 @@ header{flex-direction:column;text-align:center;}
 </section>
 
 <!-- PORTFOLIO -->
-<section id="portfolio" class="portfolio">
+<section id="portfolio">
 <h1>My Work</h1>
 
-<p>Visit my YouTube Channel</p>
+<p>Check out my content:</p>
 
-<a href="https://www.youtube.com/@PlabanRay-p8f3d" target="_blank">
-<button>View Channel</button>
-</a>
+<a href="https://www.youtube.com/@PlabanRay-p8f3d" target="_blank" class="btn">🎥 YouTube Channel</a>
+
+<a href="https://instagram.com/6x_alive" target="_blank" class="btn">📷 Instagram Profile</a>
 
 </section>
 
@@ -177,7 +184,7 @@ header{flex-direction:column;text-align:center;}
 </footer>
 
 <script>
-// SERVICE CLICK
+// CLICK EXPAND
 document.querySelectorAll(".card").forEach(card=>{
 card.addEventListener("click",()=>{
 card.classList.toggle("active");
@@ -188,8 +195,7 @@ card.classList.toggle("active");
 const elements=document.querySelectorAll(".fade");
 window.addEventListener("scroll",()=>{
 elements.forEach(el=>{
-const top=el.getBoundingClientRect().top;
-if(top<window.innerHeight-100){
+if(el.getBoundingClientRect().top < window.innerHeight-100){
 el.classList.add("show");
 }
 });
