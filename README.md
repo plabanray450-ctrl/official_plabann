@@ -141,11 +141,11 @@ header{flex-direction:column;text-align:center;}
 <div class="gallery">
 
 <div class="video">
-<iframe width="300" height="200" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+<iframe width="300" height="200" src="https://youtube.com/shorts/aitTplQGAq0?feature" frameborder="0" allowfullscreen></iframe>
 </div>
 
 <div class="video">
-<iframe width="300" height="200" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+<iframe width="300" height="200" src="https://youtube.com/shorts/k8G_aqKUt5Y?feature=share" frameborder="0" allowfullscreen></iframe>
 </div>
 
 </div>
