@@ -4,22 +4,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plaban | Cinematic Editor</title>
+<title>6x Alive Studio | Plaban</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0f0f0f;color:white;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+body{background:#0f0f0f;color:white}
 
-/* HEADER */
+/* GLASS HEADER */
 header{
-display:flex;
-justify-content:space-between;
+position:fixed;width:100%;top:0;
+display:flex;justify-content:space-between;
 padding:20px 40px;
-position:fixed;
-width:100%;
-background:rgba(0,0,0,0.7);
+background:rgba(0,0,0,0.6);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
@@ -28,63 +26,54 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
 /* HERO */
 .hero{
 height:100vh;
-background:url('https://images.unsplash.com/photo-1492724441997-5dc865305da7') center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
+display:flex;align-items:center;justify-content:center;
+background:linear-gradient(135deg,#000,#1a1a1a);
 text-align:center;
-}
-.hero::after{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-top:0;left:0;
-}
-.hero-content{
-position:relative;
-z-index:1;
 }
 .hero h1{font-size:50px;}
 .hero button{
-margin-top:20px;
-padding:12px 30px;
+margin-top:20px;padding:12px 30px;
+border:none;border-radius:30px;
+background:#6c63ff;color:white;cursor:pointer;
+}
+
+/* SECTION */
+section{padding:100px 20px;text-align:center}
+
+/* SERVICES */
+.card{
+background:rgba(255,255,255,0.05);
+margin:15px;padding:25px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+cursor:pointer;
+transition:.4s;
+}
+.card:hover{transform:translateY(-10px);box-shadow:0 0 20px #6c63ff;}
+
+.desc{display:none;margin-top:10px;color:#ccc;}
+.card.active .desc{display:block}
+
+/* GRID */
+.cards{display:flex;flex-wrap:wrap;justify-content:center}
+
+/* PORTFOLIO */
+.portfolio button{
+padding:10px 20px;
 border:none;
 background:#6c63ff;
 color:white;
-border-radius:30px;
+border-radius:20px;
 cursor:pointer;
 }
 
-/* SERVICES */
-.services{text-align:center;padding:80px 20px;}
-.cards{display:flex;justify-content:center;flex-wrap:wrap;}
-.card{
-background:#1c1c1c;
-margin:15px;
-padding:30px;
-border-radius:15px;
-width:220px;
-transition:.3s;
-}
-.card:hover{transform:translateY(-10px);}
-
-/* PORTFOLIO */
-.portfolio{text-align:center;padding:80px 20px;}
-.gallery{display:flex;flex-wrap:wrap;justify-content:center;}
-.video{
-margin:10px;
-}
-
 /* CONTACT */
-.contact{text-align:center;padding:80px 20px;}
+.contact a{color:#6c63ff}
 
 /* WHATSAPP */
 .whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
+bottom:20px;right:20px;
 background:#25D366;
 padding:15px;
 border-radius:50%;
@@ -92,8 +81,9 @@ text-decoration:none;
 font-size:20px;
 }
 
-/* FOOTER */
-footer{text-align:center;padding:20px;background:black;}
+/* ANIMATION */
+.fade{opacity:0;transform:translateY(40px);transition:1s;}
+.show{opacity:1;transform:translateY(0);}
 
 /* MOBILE */
 @media(max-width:768px){
@@ -106,17 +96,18 @@ header{flex-direction:column;text-align:center;}
 <body>
 
 <header>
-<h2>Plaban</h2>
+<h2>6x Alive Studio</h2>
 <nav>
+<a href="#home">Home</a>
 <a href="#services">Services</a>
-<a href="#portfolio">Work</a>
+<a href="#portfolio">Portfolio</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-<div class="hero-content">
+<!-- HOME -->
+<section id="home" class="hero">
+<div>
 <h1>Cinematic Video Editor</h1>
 <p>I create stunning cinematic edits for brands & creators</p>
 <a href="#contact"><button>Hire Me</button></a>
@@ -124,49 +115,86 @@ header{flex-direction:column;text-align:center;}
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="services">
-<h2>My Services</h2>
+<section id="services">
+<h1>My Services</h1>
+
 <div class="cards">
-<div class="card">🎥 Cinematic Editing</div>
-<div class="card">📸 Photography</div>
-<div class="card">🎬 Cinematic Shooting</div>
-<div class="card">🎞️ Color Grading</div>
+
+<div class="card fade">
+🎬 Cinematic Shooting
+<div class="desc">Professional cinematic shots with storytelling visuals.</div>
+</div>
+
+<div class="card fade">
+🎥 Video Editing
+<div class="desc">Smooth cuts, transitions and high-quality editing.</div>
+</div>
+
+<div class="card fade">
+📱 Reels Editing
+<div class="desc">Viral short edits optimized for Instagram.</div>
+</div>
+
+<div class="card fade">
+📸 Photography
+<div class="desc">Creative photography for brands & personal use.</div>
+</div>
+
+<div class="card fade">
+🎞️ Color Grading
+<div class="desc">Film-like cinematic color tones.</div>
+</div>
+
 </div>
 </section>
 
-<!-- PORTFOLIO (YouTube Video Embed) -->
+<!-- PORTFOLIO -->
 <section id="portfolio" class="portfolio">
-<h2>My Work</h2>
+<h1>My Work</h1>
 
-<div class="gallery">
+<p>Visit my YouTube Channel</p>
 
-<div class="video">
-<iframe width="300" height="200" src="https://youtube.com/shorts/aitTplQGAq0?feature" frameborder="0" allowfullscreen></iframe>
-</div>
-
-<div class="video">
-<iframe width="300" height="200" src="https://youtube.com/shorts/k8G_aqKUt5Y?feature=share" frameborder="0" allowfullscreen></iframe>
-</div>
-
-</div>
-
-<p>👉 Replace VIDEO_ID with your YouTube video ID</p>
+<a href="https://www.youtube.com/@PlabanRay-p8f3d" target="_blank">
+<button>View Channel</button>
+</a>
 
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-<h2>Contact Me</h2>
+<h1>Contact Me</h1>
+
 <p>📞 9332160383</p>
-<p>📷 <a href="https://instagram.com/6x_alive" target="_blank" style="color:#6c63ff">@6x_alive</a></p>
+<p>📷 <a href="https://instagram.com/6x_alive" target="_blank">@6x_alive</a></p>
+
 </section>
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/919332160383" class="whatsapp">💬</a>
 
-<footer>
-<p>© 2026 Plaban | Cinematic Editor</p>
+<footer style="text-align:center;padding:20px;background:black;">
+© 2026 6x Alive Studio | Plaban
 </footer>
+
+<script>
+// SERVICE CLICK
+document.querySelectorAll(".card").forEach(card=>{
+card.addEventListener("click",()=>{
+card.classList.toggle("active");
+});
+});
+
+// SCROLL ANIMATION
+const elements=document.querySelectorAll(".fade");
+window.addEventListener("scroll",()=>{
+elements.forEach(el=>{
+const top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+el.classList.add("show");
+}
+});
+});
+</script>
 
 </body>
 </html>
