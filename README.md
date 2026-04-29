@@ -6,15 +6,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>6x Alive Studio</title>
-<img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d" alt="editor">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-body{
-background:#f8f8f8;
-color:#111;
-}
-  background:#ff6a00;
-  background:#ff8c42;
-  background:linear-gradient(135deg,#ffffff,#fff3eb);
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
 body{background:#f7f7f7;color:#111}
