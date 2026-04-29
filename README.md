@@ -30,9 +30,26 @@ height:100vh;
 display:flex;align-items:center;
 background:linear-gradient(135deg,#ffffff,#fff3eb);
 }
-.hero h1{font-size:55px}
-.hero span{color:#ff6a00}
-.hero p{color:#555;margin-top:10px}
+
+.hero-flex{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+padding:50px;
+width:100%;
+}
+
+.hero-text h1{font-size:55px}
+.hero-text span{color:#ff6a00}
+.hero-text p{color:#555;margin-top:10px}
+
+.hero-img img{
+width:100%;
+max-width:450px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.1);
+}
 
 /* BUTTON */
 .btn{
@@ -50,22 +67,40 @@ transition:.3s;
 /* SECTION */
 .section{padding:100px 20px;text-align:center}
 
-/* CARDS */
+/* SERVICES */
 .cards{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
 margin-top:40px;
 }
+
 .card{
 background:white;
 padding:25px;
 border-radius:15px;
 box-shadow:0 10px 30px rgba(0,0,0,0.05);
 transition:.3s;
+position:relative;
+overflow:hidden;
 }
+
 .card:hover{
 transform:translateY(-10px);
+}
+
+.desc{
+opacity:0;
+transform:translateY(20px);
+font-size:14px;
+color:#666;
+margin-top:10px;
+transition:.4s;
+}
+
+.card:hover .desc{
+opacity:1;
+transform:translateY(0);
 }
 
 /* PRICING */
@@ -83,7 +118,6 @@ border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.05);
 transition:.4s;
 position:relative;
-overflow:hidden;
 }
 
 .price-card:hover{
@@ -91,7 +125,6 @@ transform:translateY(-15px) scale(1.05);
 box-shadow:0 20px 50px rgba(255,106,0,0.2);
 }
 
-/* MOST POPULAR */
 .popular{
 border:2px solid #ff6a00;
 }
@@ -107,17 +140,7 @@ border-radius:20px;
 font-size:12px;
 }
 
-/* PRICE */
-.price{
-color:#ff6a00;
-font-size:22px;
-margin-top:10px;
-}
-
-/* PORTFOLIO */
-.links a{
-margin:10px;
-}
+.price{color:#ff6a00;font-size:22px;margin-top:10px}
 
 /* CONTACT */
 .contact-box{
@@ -130,7 +153,7 @@ justify-content:space-around;
 margin-top:30px;
 }
 
-/* WHATSAPP FLOAT */
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;right:20px;
@@ -142,10 +165,11 @@ border-radius:50%;
 
 /* MOBILE */
 @media(max-width:900px){
+.hero-flex{flex-direction:column}
 .cards{grid-template-columns:1fr}
 .pricing{grid-template-columns:1fr}
 .contact-box{flex-direction:column;gap:20px}
-.hero h1{font-size:30px}
+.hero-text h1{font-size:30px}
 }
 </style>
 
@@ -166,10 +190,18 @@ border-radius:50%;
 <!-- HERO -->
 
 <section id="home" class="hero">
-<div style="padding:20px">
+<div class="hero-flex">
+
+<div class="hero-text">
 <h1>I Edit. <span>You Shine.</span></h1>
 <p>I create cinematic videos that grow your brand</p>
 <a href="#contact" class="btn">Hire Me</a>
+</div>
+
+<div class="hero-img">
+<img src="editor.jpg" alt="editor">
+</div>
+
 </div>
 </section>
 
@@ -179,11 +211,27 @@ border-radius:50%;
 <h2>My Services</h2>
 
 <div class="cards">
-<div class="card">🎥 Video Editing</div>
-<div class="card">📱 Reels Editing</div>
-<div class="card">🎬 Shooting</div>
-<div class="card">📸 Photography</div>
-<div class="card">🎞️ Color Grading</div>
+
+<div class="card">🎥 Video Editing
+<p class="desc">Cinematic edits for YouTube, Ads & brands.</p>
+</div>
+
+<div class="card">📱 Reels Editing
+<p class="desc">Short viral reels for Instagram growth.</p>
+</div>
+
+<div class="card">🎬 Shooting
+<p class="desc">Professional cinematic shooting.</p>
+</div>
+
+<div class="card">📸 Photography
+<p class="desc">Creative and aesthetic photography.</p>
+</div>
+
+<div class="card">🎞️ Color Grading
+<p class="desc">Film-style color tones.</p>
+</div>
+
 </div>
 
 </section>
@@ -235,10 +283,8 @@ border-radius:50%;
 
 <section class="section">
 <h2>Portfolio</h2>
-<div class="links">
 <a href="https://www.youtube.com/@PlabanRay-p8f3d" class="btn">YouTube</a>
 <a href="https://instagram.com/6x_alive" class="btn">Instagram</a>
-</div>
 </section>
 
 <!-- CONTACT -->
