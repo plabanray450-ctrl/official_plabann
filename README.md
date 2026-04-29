@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>6x Alive Studio</title>
-
+<img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0" alt="editor">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
